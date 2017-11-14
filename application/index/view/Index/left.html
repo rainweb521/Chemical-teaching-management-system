@@ -1,0 +1,65 @@
+<div class="col-sm-3 col-md-2 sidebar">
+    <div class="top-navigation">
+        <div class="t-menu">MENU</div>
+        <div class="t-img">
+            <img src="/public/index/images/lines.png" alt="" />
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <div class="drop-navigation drop-navigation">
+        <ul class="nav nav-sidebar">
+            <br>
+            <li class="active"><a href="" class="home-icon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a></li>
+            <li><a href="" class="user-icon"><span class="glyphicon glyphicon-home glyphicon-blackboard" aria-hidden="true"></span>高中实验</a></li>
+            <li><a href="" class="sub-icon"><span class="glyphicon glyphicon-home glyphicon-hourglass" aria-hidden="true"></span>初中实验</a></li>
+            <li><a href="#" class="menu1"><span class="glyphicon glyphicon-film" aria-hidden="true"></span>实验类型<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>
+
+            <ul class="cl-effect-2">
+                <li><a href="">化合反应</a></li>
+                <li><a href="">中和反应</a></li>
+                <li><a href="">分解反应</a></li>
+                <li><a href="">复分解反应</a></li>
+                <li><a href="">氧化还原反应</a></li>
+            </ul>
+            <!-- script-for-menu -->
+            <script>
+                $( "li a.menu1" ).click(function() {
+                    $( "ul.cl-effect-2" ).slideToggle( 300, function() {
+                        // Animation complete.
+                    });
+                });
+            </script>
+            <!--<li><a href="#" class="menu"><span class="glyphicon glyphicon-film glyphicon-king" aria-hidden="true"></span>Sports<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a></li>-->
+            <!--<ul class="cl-effect-1">-->
+            <!--<li><a href="sports.html">Football</a></li>                                             -->
+            <!--<li><a href="sports.html">Cricket</a></li>-->
+            <!--<li><a href="sports.html">Tennis</a></li> -->
+            <!--<li><a href="sports.html">Shattil</a></li>  -->
+            <!--</ul>-->
+            <!--&lt;!&ndash; script-for-menu &ndash;&gt;-->
+            <!--<script>-->
+            <!--$( "li a.menu" ).click(function() {-->
+            <!--$( "ul.cl-effect-1" ).slideToggle( 300, function() {-->
+            <!--// Animation complete.-->
+            <!--});-->
+            <!--});-->
+            <!--</script>-->
+            <!--<li><a href="movies.html" class="song-icon"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>Songs</a></li>-->
+            <!--<li><a href="news.html" class="news-icon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>News</a></li>-->
+        </ul>
+        <!-- script-for-menu -->
+        <script>
+            $( ".top-navigation" ).click(function() {
+                $( ".drop-navigation" ).slideToggle( 300, function() {
+                    // Animation complete.
+                });
+            });
+        </script>
+        <div class="side-bottom">
+
+            <div class="copyright">
+                <p>Copyright &copy; 2017.版权所有</p>
+            </div>
+        </div>
+    </div>
+</div>
