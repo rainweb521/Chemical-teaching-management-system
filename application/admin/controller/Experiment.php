@@ -28,7 +28,18 @@ class Experiment extends Common{
               `video` char(255) DEFAULT NULL COMMENT '实验视频',
               `view` int(11) DEFAULT NULL COMMENT '观看次数',
               `state` tinyint(4) DEFAULT NULL COMMENT '实验状态，能否观看',
-              `status` tinyint(4) DEFAULT NULL COMMENT '实验类型',*/
+              `status` tinyint(4) DEFAULT NULL COMMENT '实验类型',
+               *
+              `status_grade` tinyint(4) DEFAULT NULL COMMENT '以数字的形式来显示年级',
+              `grade` char(255) DEFAULT NULL COMMENT '以文本的形式显示年级',
+              `status_react` tinyint(4) DEFAULT NULL COMMENT '化学反应类型的数字形式',
+              `react` char(255) DEFAULT NULL COMMENT '化学反应的文字形式',
+              `u_id` int(11) DEFAULT NULL,
+              `uploader` char(255) DEFAULT NULL COMMENT '上传者',
+              `video_time` char(255) DEFAULT NULL COMMENT '视频时长',
+
+               */
+
             $data['title'] = Request::instance()->post('title','');
             $data['profile'] = Request::instance()->post('profile','');
             $data['content'] = Request::instance()->post('content','');
@@ -36,6 +47,9 @@ class Experiment extends Common{
             $data['focus'] = Request::instance()->post('focus','');
             $data['material'] = Request::instance()->post('material','');
             $data['state'] = 1;
+            $data['status_grade'] = Request::instance()->port('status_grade',1);
+            $data['status_react'] = Request::instance()->port('status_grade',1);
+            $data['uploader'] = Request::instance()->port('uploader','');
             $experiment_model = new \app\config\model\Experiment();
             $e_id = $experiment_model->insert_ExperimentInfo($data);
             return \view('form_video',array('e_id'=>$e_id));

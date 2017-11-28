@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amaze UI Admin index Examples</title>
+    <title>中学化学教学管理系统</title>
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -123,7 +123,7 @@
                                         </div>
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs tpl-edit-content-btn">
-                                                <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-eye"></span> 查看</button>
+                                                <button id="view" onclick='view("{$line.e_id}")' type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-eye"></span> 查看</button>
                                                 <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-edit"></span> 编辑</button>
                                                 <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>
                                                 <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
@@ -170,7 +170,11 @@
         </div>
 
     </div>
-
+    <script>
+        function view(obj) {
+            location.href = '/index.php/index/index/play?e_id='+obj;
+        }
+    </script>
 
     <script src="/public/admin/js/jquery.min.js"></script>
     <script src="/public/admin/js/amazeui.min.js"></script>

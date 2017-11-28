@@ -29,6 +29,10 @@ class Experiment extends Model{
     public function save_ExperimentInfo($data,$where){
         Experiment::save($data,$where);
     }
+    public function get_Experiment_New_List($num,$where=null){
+        $list = Experiment::where($where)->limit($num)->select();
+        return $list;
+    }
     public function get_ExperimentList($where=null){
         $list = Experiment::where($where)->select();
         return $list;
@@ -38,6 +42,18 @@ class Experiment extends Model{
         $data['state'] = 3;
         $data['out_time'] = date('Y-m-d');
         Experiment::save($data,['id'=>$id]);
+    }
+    public function get_Blank(){
+        $data['title'] = '';
+        $data['profile'] = '';
+        $data['content'] = '';
+        $data['add_time'] = '';
+        $data['focus'] = '';
+        $data['material'] = '';
+        $data['state'] = 1;
+        $data['status_grade'] = Request::instance()->port('status_grade',1);
+        $data['status_react'] = Request::instance()->port('status_grade',1);
+        $data['uploader'] = Request::instance()->port('uploader','');
     }
     /**
      * 给文件添加有效期，默认为 7 天

@@ -1,32 +1,129 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"><h1><img src="/public/index/images/logo.png" alt="" /></h1></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <div class="top-search">
-                <form class="navbar-form navbar-right">
-                    <input type="text" class="form-control" placeholder="Search...">
-                    <input type="submit" value=" ">
-                </form>
+<header class="bg-white-only header header-md navbar navbar-fixed-top-xs">
+    <div class="navbar-header aside bg-info dk">
+        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+            <i class="icon-list"></i>
+        </a>
+        <a href="index.html" class="navbar-brand text-lt">
+            <i class="icon-earphones"></i>
+            <img src="/public/test/picture/logo.png" alt="." class="hide">
+            <span class="hidden-nav-xs m-l-sm">中学化学教学</span>
+        </a>
+        <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
+            <i class="icon-settings"></i>
+        </a>
+    </div>      <ul class="nav navbar-nav hidden-xs">
+    <li>
+        <a href="#nav,.navbar-header" data-toggle="class:nav-xs,nav-xs" class="text-muted">
+            <i class="fa fa-indent text"></i>
+            <i class="fa fa-dedent text-active"></i>
+        </a>
+    </li>
+</ul>
+    <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
+        <div class="form-group">
+            <div class="input-group">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-sm bg-white btn-icon rounded"><i class="fa fa-search"></i></button>
+            </span>
+                <input type="text" class="form-control input-sm no-border rounded" placeholder="Search songs, albums...">
             </div>
-            <div class="header-top-right">
-                <div class="signin">
-                    <a href="" class="play-icon popup-with-zoom-anim">注册</a>
+        </div>
+    </form>
+    {if condition="$User.username eq '0'"}
+    <div class="navbar-right ">
+        <ul class="nav navbar-nav m-n hidden-xs nav-user user">
 
-                </div>
-                <div class="signin">
-                    <a href="" class="play-icon popup-with-zoom-anim">登录</a>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-        <div class="clearfix"> </div>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
+              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                <img src="picture/a0.png" alt="">
+              </span>
+                    未登录 <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu animated fadeInRight aside text-left">
+                    <li>
+                        <a href="">Help</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="/index.php/index/login">登录</a>
+                    </li>
+                    <li>
+                        <a href="/index.php/index/login/signup">注册</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
-</nav>
+    {else /}
+    <div class="navbar-right ">
+        <ul class="nav navbar-nav m-n hidden-xs nav-user user">
+            <li class="hidden-xs">
+                <a href="#" class="dropdown-toggle lt" data-toggle="dropdown">
+                    <i class="icon-bell"></i>
+                    <span class="badge badge-sm up bg-danger count">2</span>
+                </a>
+                <section class="dropdown-menu aside-xl animated fadeInUp">
+                    <section class="panel bg-white">
+                        <div class="panel-heading b-light bg-light">
+                            <strong>You have <span class="count">2</span> notifications</strong>
+                        </div>
+                        <div class="list-group list-group-alt">
+                            <a href="#" class="media list-group-item">
+                    <span class="pull-left thumb-sm">
+                      <img src="picture/a0.png" alt="..." class="img-circle">
+                    </span>
+                                <span class="media-body block m-b-none">
+                      Use awesome animate.css<br>
+                      <small class="text-muted">10 minutes ago</small>
+                    </span>
+                            </a>
+                            <a href="#" class="media list-group-item">
+                    <span class="media-body block m-b-none">
+                      1.0 initial released<br>
+                      <small class="text-muted">1 hour ago</small>
+                    </span>
+                            </a>
+                        </div>
+                        <div class="panel-footer text-sm">
+                            <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+                            <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
+                        </div>
+                    </section>
+                </section>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
+              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                <img src="{$User.photo}" alt="">
+              </span>
+                    {$User.username} <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu animated fadeInRight">
+                    <li>
+                        <span class="arrow top"></span>
+                        <a href="/index.php/index/account/setting">个人设置</a>
+                    </li>
+                    <li>
+                        <a href="/index.php/index/account">我的主页</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="badge bg-danger pull-right">3</span>
+                            我的消息
+                        </a>
+                    </li>
+                    <li>
+                        <a href="docs.html">使用帮助</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="/index.php/index/login/logout" >退出登录</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    {/if}
+
+</header>

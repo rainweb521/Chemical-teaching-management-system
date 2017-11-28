@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="app">
+<head>  
+  <meta charset="utf-8" />
+  <title>Musik | Web Application</title>
+  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="/public/test/css/jplayer.flat.css" type="text/css" />
+  <link rel="stylesheet" href="/public/test/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="/public/test/css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="/public/test/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="/public/test/css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="/public/test/css/font.css" type="text/css" />
+  <link rel="stylesheet" href="/public/test/css/app.css" type="text/css" />
+  <link rel="stylesheet" href="/public/test/css/datepicker.css" type="text/css" />
+<link rel="stylesheet" href="/public/test/css/slider.css" type="text/css" />
+<link rel="stylesheet" href="/public/test/css/chosen.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="/public/test/js/html5shiv.js"></script>
+    <script src="/public/test/js/respond.min.js"></script>
+    <script src="/public/test/js/excanvas.js"></script>
+  <![endif]-->
+</head>
+<body class="">
+  <section class="vbox">
+    {include file="Index/header"/}
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        {include file="Index/left"/}
+                <!-- / nav -->
+              </div>
+            </section>
+
+      {include file="Index/footer"/}
+          </section>
+        </aside>
+        <!-- /.aside -->
+        <section id="content">
+          <section class="vbox">
+            <section class="scrollable padder">
+              <div class="m-b-md">
+                <h3 class="m-b-none">修改信息</h3>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <section class="panel panel-default">
+                    <header class="panel-heading font-bold">修改邮箱</header>
+                    <div class="panel-body">
+                      <form class="bs-example form-horizontal">
+                        <div class="form-group">
+                          <label class="col-lg-2 control-label">旧的邮箱</label>
+                          <div class="col-lg-10">
+                            <input type="password" class="form-control" placeholder="输入旧的邮箱">
+                            <!--<span class="help-block m-b-none">Example block-level help text here.</span>-->
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-lg-2 control-label">新的邮箱</label>
+                          <div class="col-lg-10">
+                            <input type="password" class="form-control" placeholder="输入新的邮箱">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-lg-offset-2 col-lg-10">
+                            <button type="submit" class="btn btn-sm btn-default">保存</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </section>
+                </div>
+                <div class="col-sm-6">
+                  <section class="panel panel-default">
+                    <header class="panel-heading font-bold">修改密码</header>
+                    <div class="panel-body">
+                      <form class="bs-example form-horizontal">
+                        <div class="form-group">
+                          <label class="col-lg-2 control-label">旧密码</label>
+                          <div class="col-lg-10">
+                            <input type="password" class="form-control" placeholder="输入旧密码">
+                            <!--<span class="help-block m-b-none">Example block-level help text here.</span>-->
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-lg-2 control-label">新密码</label>
+                          <div class="col-lg-10">
+                            <input type="password" class="form-control" placeholder="输入新密码">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-lg-offset-2 col-lg-10">
+                            <button type="submit" class="btn btn-sm btn-default">保存</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </section>
+                </div>
+              </div>
+
+              <section class="panel panel-default">
+                <header class="panel-heading font-bold">
+                  其他信息
+                </header>
+                <div class="panel-body">
+                  <form class="form-horizontal" method="get">
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">性别</label>
+                      <div class="col-sm-10">
+                        <div class="btn-group m-r">
+                          <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                            <span class="dropdown-label" data-placeholder="Please select">选择性别</span>
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu dropdown-select">
+                            <li><input type="radio" name="d-s-c-1"><a href="#">男</a></li>
+                            <li><input type="radio" name="d-s-c-1"><a href="#">女</a></li>
+                            <li><input type="radio" name="d-s-c-1"><a href="#">保密</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">生日</label>
+                      <div class="col-sm-10">
+                        <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="12-02-2013" data-date-format="dd-mm-yyyy" >
+                      </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-lg-2 control-label">用户名</label>
+                      <div class="col-lg-10">
+                        <p class="form-control-static">rain</p>
+                      </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">所在年级</label>
+
+
+                      <div class="col-sm-10">
+                        <div class="btn-group m-r">
+                          <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                            <span class="dropdown-label" data-placeholder="Please select">选择年级</span>
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu dropdown-select">
+                            <li><input type="radio" name="d-s-c-1"><a href="#">初一</a></li>
+                            <li><input type="radio" name="d-s-c-1"><a href="#">初二</a></li>
+                            <li><input type="radio" name="d-s-c-1"><a href="#">初三</a></li>
+                            <li><input type="radio" name="d-s-c-1"><a href="#">高一</a></li>
+                            <li><input type="radio" name="d-s-c-1"><a href="#">高二</a></li>
+                            <li><input type="radio" name="d-s-c-1"><a href="#">高三</a></li>
+                            <!--<li class="disabled"><input type="radio" name="d-s-r" disabled=""><a href="#">I'm disabled</a></li>-->
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!---->
+                    <!--<div class="line line-dashed b-b line-lg pull-in"></div>-->
+                    <!--<div class="form-group">-->
+                      <!--<label class="col-sm-2 control-label">Switch</label>-->
+                      <!--<div class="col-sm-10">-->
+                        <!--<label class="switch">-->
+                          <!--<input type="checkbox">-->
+                          <!--<span></span>-->
+                        <!--</label>-->
+                      <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">所在地区</label>
+                      <div class="col-sm-10">
+                        <select style="width:260px" class="chosen-select">
+                            <optgroup label="">
+                              <option value="AK">BJ - 北京</option>
+                              <option value="HI">TJ - 天津</option>
+                              <option value="HI">HE - 河北</option>
+                              <option value="HI">SX - 山西</option>
+                              <option value="HI">NM - 内蒙古</option>
+                              <option value="HI">LN - 辽宁</option>
+                              <option value="HI">JL - 吉林</option>
+                              <option value="HI">HL - 黑龙江</option>
+                              <option value="HI">SH - 上海</option>
+                              <option value="HI">JS - 江苏</option>
+                              <option value="HI">ZJ - 浙江</option>
+                              <option value="HI">AH - 安徽</option>
+                              <option value="HI">FJ - 福建</option>
+                              <option value="HI">JX - 江西</option>
+                              <option value="HI">SD - 山东</option>
+                              <option value="HI">HA - 河南</option>
+                              <option value="HI">HB - 湖北</option>
+                              <option value="HI">HN - 湖南</option>
+                              <option value="HI">GX - 广西</option>
+                              <option value="HI">GD - 广东</option>
+                              <option value="HI">HI - 海南</option>
+                              <option value="HI">CQ - 重庆</option>
+                              <option value="HI">SC - 四川</option>
+                              <option value="HI">GZ - 贵州</option>
+                              <option value="HI">YN - 云南</option>
+                              <option value="HI">XZ - 西藏</option>
+                              <option value="HI">SN - 陕西</option>
+                              <option value="HI">GS - 甘肃</option>
+                              <option value="HI">QH - 青海</option>
+                              <option value="HI">NX - 宁夏</option>
+                              <option value="HI">XJ - 新疆</option>
+                              <option value="HI">HK - 香港</option>
+                              <option value="HI">MO - 澳门</option>
+                              <option value="HI">TW - 台湾</option>
+                            </optgroup>
+                            <!--<optgroup label="Pacific Time Zone">-->
+                                <!--<option value="CA">California</option>-->
+                                <!--<option value="NV">Nevada</option>-->
+                                <!--<option value="OR">Oregon</option>-->
+                                <!--<option value="WA">Washington</option>-->
+                            <!--</optgroup>-->
+                        </select>
+                      </div>
+                    </div>
+
+                    <!--<div class="line line-dashed b-b line-lg pull-in"></div>-->
+                    <!--<div class="form-group">-->
+                      <!--<label class="col-sm-2 control-label">感兴趣的实验</label>-->
+                      <!--<div class="col-sm-10">-->
+                        <!--<select style="width:260px" multiple class="chosen-select">-->
+                          <!--<option value="AK">Alaska</option>-->
+                          <!--<option value="HI">Hawaii</option>-->
+                          <!--<option value="CA">California</option>-->
+                          <!--<option value="NV">Nevada</option>-->
+                          <!--<option value="OR">Oregon</option>-->
+                          <!--<option value="WA">Washington</option>-->
+                        <!--</select>-->
+                      <!--</div>-->
+                    <!--</div>-->
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">上传头像</label>
+                      <div class="col-sm-10">
+                        <input type="file" class="filestyle" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
+                      </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label">个人介绍</label>
+                      <div class="col-sm-10">
+                        <textarea rows="5" cols="60"></textarea>
+                      </div>
+                    </div>
+
+
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <div class="form-group">
+                      <div class="col-sm-4 col-sm-offset-2">
+                        <button type="submit" class="btn btn-default">返回</button>
+                        <button type="submit" class="btn btn-primary">保存修改</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </section>
+            </section>
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+      </section>
+    </section>    
+  </section>
+  <script src="/public/test/js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="/public/test/js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="/public/test/js/app.js"></script>
+  <script src="/public/test/js/jquery.slimscroll.min.js"></script>
+    <div class="modal fade" id="modal-form">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body wrapper-lg">
+          <div class="row">
+            <div class="col-sm-6 b-r">
+              <h3 class="m-t-none m-b">Sign in</h3>
+              <p>Sign in to meet your friends.</p>
+              <form role="form">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" class="form-control" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" class="form-control" placeholder="Password">
+                </div>
+                <div class="checkbox m-t-lg">
+                  <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>Log in</strong></button>
+                  <label>
+                    <input type="checkbox"> Remember me
+                  </label>
+                </div>                
+              </form>
+            </div>
+            <div class="col-sm-6">
+              <h4>Not a member?</h4>
+              <p>You can create an account <a href="#" class="text-info">here</a></p>
+              <p>OR</p>
+              <a href="#" class="btn btn-primary btn-block m-b-sm"><i class="fa fa-facebook pull-left"></i>Sign in with Facebook</a>
+              <a href="#" class="btn btn-info btn-block m-b-sm"><i class="fa fa-twitter pull-left"></i>Sign in with Twitter</a>
+              <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google-plus pull-left"></i>Sign in with Google+</a>
+            </div>
+          </div>          
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
+  <!-- datepicker -->
+  <script src="/public/test/js/bootstrap-datepicker.js"></script>
+  <!-- slider -->
+  <script src="/public/test/js/bootstrap-slider.js"></script>
+  <!-- file input -->  
+  <script src="/public/test/js/bootstrap-filestyle.min.js"></script>
+  <!-- wysiwyg -->
+  <script src="/public/test/js/jquery.hotkeys.js"></script>
+  <script src="/public/test/js/bootstrap-wysiwyg.js"></script>
+  <script src="/public/test/js/demo.js"></script>
+  <!-- markdown -->
+  <script src="/public/test/js/epiceditor.min.js"></script>
+  <script src="/public/test/js/demo_1.js"></script>
+
+  <script src="/public/test/js/chosen.jquery.min.js"></script>
+  <script src="/public/test/js/app.plugin.js"></script>
+  <script type="text/javascript" src="/public/test/js/jquery.jplayer.min.js"></script>
+  <script type="text/javascript" src="/public/test/js/jplayer.playlist.min.js"></script>
+  <script type="text/javascript" src="/public/test/js/demo_2.js"></script>
+</body>
+</html>

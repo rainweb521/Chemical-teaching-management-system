@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin index Examples</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="/public/admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/public/admin/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="/public/admin/css/amazeui.min.css" />
+    <link rel="stylesheet" href="/public/admin/css/admin.css">
+    <link rel="stylesheet" href="/public/admin/css/app.css">
+</head>
+
+<body data-type="generalComponents">
+
+
+
+
+{include file="Index/header"/}
+
+
+<div class="tpl-page-container tpl-page-header-fixed">
+    {include file="Index/menu"/}
+
+
+
+
+        <div class="tpl-content-wrapper">
+            <!--<div class="tpl-content-page-title">-->
+                <!--Amaze UI 表单-->
+            <!--</div>-->
+            <!--<ol class="am-breadcrumb">-->
+                <!--<li><a href="#" class="am-icon-home">首页</a></li>-->
+                <!--<li><a href="#">表单</a></li>-->
+                <!--<li class="am-active">Amaze UI 表单</li>-->
+            <!--</ol>-->
+            <div class="tpl-portlet-components">
+                <div class="portlet-title">
+                    <div class="caption font-green bold">
+                        <span class="am-icon-code"></span> 用户权限
+                    </div>
+                    <div class="tpl-portlet-input tpl-fz-ml">
+                        <div class="portlet-input input-small input-inline">
+                            <div class="input-icon right">
+                                <!--<i class="am-icon-search"></i>-->
+                                <input type="hidden" class="form-control form-control-solid" placeholder="搜索..."> </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="tpl-block">
+                    <div class="am-g">
+                        <!--<div class="am-u-sm-12 am-u-md-6">-->
+                            <!--<div class="am-btn-toolbar">-->
+                                <!--<div class="am-btn-group am-btn-group-xs">-->
+                                    <!--<button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>-->
+                                    <!--<button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>-->
+                                    <!--<button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>-->
+                                    <!--<button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="am-u-sm-12 am-u-md-3">-->
+                            <!--<div class="am-form-group">-->
+                                <!--<select data-am-selected="{btnSize: 'sm'}">-->
+              <!--<option value="option1">所有类别</option>-->
+              <!--<option value="option2">IT业界</option>-->
+              <!--<option value="option3">数码产品</option>-->
+              <!--<option value="option3">笔记本电脑</option>-->
+              <!--<option value="option3">平板电脑</option>-->
+              <!--<option value="option3">只能手机</option>-->
+              <!--<option value="option3">超极本</option>-->
+            <!--</select>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="am-u-sm-12 am-u-md-3">-->
+                            <!--<div class="am-input-group am-input-group-sm">-->
+                                <!--<input type="text" class="am-form-field">-->
+                                <!--<span class="am-input-group-btn">-->
+            <!--<button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" type="button"></button>-->
+          <!--</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+
+                    <ul class="tpl-task-list">
+                        <li>
+                            <div class="task-checkbox">
+                                <input type="hidden" value="1" name="test">
+                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
+                            <div class="task-title">
+                                <span class="task-title-sp">非VIP用户是否可以下载视频 </span>
+                                <span class="label label-sm label-success">可以</span>
+                                <span class="task-bell">
+                                            <!--<i class="am-icon-bell-o"></i>-->
+                                        </span>
+                            </div>
+                            <div class="task-config">
+                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
+                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
+                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
+                                    </a>
+                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="am-icon-check"></i> 可以 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="am-icon-pencil"></i> 不可以 </a>
+                                        </li>
+                                        <!--<li>-->
+                                            <!--<a href="javascript:;">-->
+                                                <!--<i class="am-icon-trash-o"></i> 删除 </a>-->
+                                        <!--</li>-->
+                                    </ul>
+
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="task-checkbox">
+                                <input type="hidden" value="1" name="test">
+                                <input type="checkbox" class="liChild" value="2" name="test"> </div>
+                            <div class="task-title">
+                                <span class="task-title-sp"> 是否开放用户注册功能 </span>
+                                <span class="label label-sm label-danger">未开放</span>
+
+                            </div>
+                            <div class="task-config">
+                                <div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">
+                                    <a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">
+                                        <i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>
+                                    </a>
+                                    <ul class="am-dropdown-content tpl-task-list-dropdown-ul">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="am-icon-check"></i> 开放 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <i class="am-icon-pencil"></i> 未开放 </a>
+                                        </li>
+                                        <!--<li>-->
+                                            <!--<a href="javascript:;">-->
+                                                <!--<i class="am-icon-trash-o"></i> 删除 </a>-->
+                                        <!--</li>-->
+                                    </ul>
+
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <!--<li>-->
+                            <!--<div class="task-checkbox">-->
+                                <!--<input type="hidden" value="1" name="test">-->
+                                <!--<input type="checkbox" class="liChild" value="2" name="test"> </div>-->
+                            <!--<div class="task-title">-->
+                                <!--<span class="task-title-sp"> 使用 LESS： 通过设置变量 @fa-font-path 覆盖默认的值，如 @fa-font-path: "../fonts";。这个变量定义在 icon.less 里。 </span>-->
+                                <!--<span class="label label-sm label-warning">市场部</span>-->
+
+                            <!--</div>-->
+                            <!--<div class="task-config">-->
+                                <!--<div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">-->
+                                    <!--<a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">-->
+                                        <!--<i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>-->
+                                    <!--</a>-->
+                                    <!--<ul class="am-dropdown-content tpl-task-list-dropdown-ul">-->
+                                        <!--<li>-->
+                                            <!--<a href="javascript:;">-->
+                                                <!--<i class="am-icon-check"></i> 保存 </a>-->
+                                        <!--</li>-->
+                                        <!--<li>-->
+                                            <!--<a href="javascript:;">-->
+                                                <!--<i class="am-icon-pencil"></i> 编辑 </a>-->
+                                        <!--</li>-->
+                                        <!--<li>-->
+                                            <!--<a href="javascript:;">-->
+                                                <!--<i class="am-icon-trash-o"></i> 删除 </a>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+
+
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+
+                        <!--<li>-->
+                            <!--<div class="task-checkbox">-->
+                                <!--<input type="hidden" value="1" name="test">-->
+                                <!--<input type="checkbox" class="liChild" value="2" name="test"> </div>-->
+                            <!--<div class="task-title">-->
+                                <!--<span class="task-title-sp"> 添加 .am-btn-group-justify class 让按钮组里的按钮平均分布，填满容器宽度。 </span>-->
+                                <!--<span class="label label-sm label-default">已废弃</span>-->
+
+                            <!--</div>-->
+                            <!--<div class="task-config">-->
+                                <!--<div class="am-dropdown tpl-task-list-dropdown" data-am-dropdown="">-->
+                                    <!--<a href="###" class="am-dropdown-toggle tpl-task-list-hover " data-am-dropdown-toggle="">-->
+                                        <!--<i class="am-icon-cog"></i> <span class="am-icon-caret-down"></span>-->
+                                    <!--</a>-->
+                                    <!--<ul class="am-dropdown-content tpl-task-list-dropdown-ul">-->
+                                        <!--<li>-->
+                                            <!--<a href="javascript:;">-->
+                                                <!--<i class="am-icon-check"></i> 保存 </a>-->
+                                        <!--</li>-->
+                                        <!--<li>-->
+                                            <!--<a href="javascript:;">-->
+                                                <!--<i class="am-icon-pencil"></i> 编辑 </a>-->
+                                        <!--</li>-->
+                                        <!--<li>-->
+                                            <!--<a href="javascript:;">-->
+                                                <!--<i class="am-icon-trash-o"></i> 删除 </a>-->
+                                        <!--</li>-->
+                                    <!--</ul>-->
+
+
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <br><br><br><br><br><br>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+    <script src="/public/admin/js/jquery.min.js"></script>
+    <script src="/public/admin/js/amazeui.min.js"></script>
+    <script src="/public/admin/js/app.js"></script>
+</body>
+
+</html>

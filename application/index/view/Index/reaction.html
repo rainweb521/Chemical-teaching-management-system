@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+<head>
+	<meta charset="utf-8" />
+	<title>Musik | Web Application</title>
+	<meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="stylesheet" href="/public/test/css/jplayer.flat.css" type="text/css" />
+	<link rel="stylesheet" href="/public/test/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/public/test/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/public/test/css/font-awesome.min.css" type="text/css" />
+	<link rel="stylesheet" href="/public/test/css/simple-line-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/public/test/css/font.css" type="text/css" />
+	<link rel="stylesheet" href="/public/test/css/app.css" type="text/css" />
+	<!--[if lt IE 9]>
+	<script src="/public/test/js/html5shiv.js"></script>
+	<script src="/public/test/js/respond.min.js"></script>
+	<script src="/public/test/js/excanvas.js"></script>
+	<![endif]-->
+</head>
+<body class="">
+<section class="vbox">
+	{include file="Index/header"/}
+	<section>
+		<section class="hbox stretch">
+			<!-- .aside -->
+			{include file="Index/left"/}
+							<!-- / nav -->
+						</div>
+					</section>
+
+					{include file="Index/footer"/}
+				</section>
+			</aside>
+			<!-- /.aside -->
+			<section id="content">
+				<section class="vbox" id="bjax-el">
+					<section class="scrollable padder-lg">
+						<!--<h2 class="font-thin m-b">最新视频</h2>-->
+						<!--<div class="row row-sm">-->
+						<!--</div>-->
+						{volist name="list" id="line"}
+						<h3 class="font-thin m-b"></h3>
+						<div class="row row-sm">
+
+							<div class="col-xs-6 col-sm-4 col-md-3">
+								<div class="item">
+									<div class="pos-rlt">
+										<div class="item-overlay opacity r r-2x bg-black">
+											<div class="center text-center m-t-n">
+												<a href="/index.php/index/index/play?e_id={$line.e_id}"><i class="fa fa-play-circle i-2x"></i></a>
+											</div>
+										</div>
+										<a href="/index.php/index/index/play?e_id={$line.e_id}"><img src="{$line.picture}" alt="" class="r r-2x img-full"></a>
+									</div>
+									<div class="padder-v">
+										<a href="/index.php/index/index/play?e_id={$line.e_id}" class="text-ellipsis">{$line.title}</a></a>
+										<a href="/index.php/index/index/play?e_id={$line.e_id}" class="text-ellipsis text-xs text-muted">left.html</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						{/volist}
+
+						<ul class="pagination pagination">
+							<li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+						</ul>
+					</section>
+				</section>
+				<a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+			</section>
+		</section>
+	</section>
+</section>
+<script src="/public/test/js/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="/public/test/js/bootstrap.js"></script>
+<!-- App -->
+<script src="/public/test/js/app.js"></script>
+<script src="/public/test/js/jquery.slimscroll.min.js"></script>
+<script src="/public/test/js/app.plugin.js"></script>
+<script type="text/javascript" src="/public/test/js/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="/public/test/js/jplayer.playlist.min.js"></script>
+<script type="text/javascript" src="/public/test/js/demo.js"></script>
+</body>
+</html>

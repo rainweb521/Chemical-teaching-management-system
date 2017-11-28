@@ -1,55 +1,72 @@
-<!-- footer -->
-<div class="footer">
-    <div class="footer-grids">
-        <!--<div class="footer-top">-->
-        <!--<div class="footer-top-nav">-->
-        <!--<ul>-->
-        <!--<li><a href="about.html">关于我们</a></li>-->
-        <!--<li><a href="press.html">Press</a></li>-->
-        <!--<li><a href="copyright.html">Copyright</a></li>-->
-        <!--<li><a href="creators.html">Creators</a></li>-->
-        <!--<li><a href="#">Advertise</a></li>-->
-        <!--<li><a href="developers.html">Developers</a></li>-->
-        <!--</ul>-->
-        <!--</div>-->
-        <!--<div class="footer-bottom-nav">-->
-        <!--<ul>-->
-        <!--<li><a href="terms.html">Terms</a></li>-->
-        <!--<li><a href="privacy.html">Privacy</a></li>-->
-        <!--<li><a href="#small-dialog4" class="play-icon popup-with-zoom-anim">Send feedback</a></li>-->
-        <!--<li><a href="privacy.html">Policy & Safety </a></li>-->
-        <!--<li><a href="try.html">Try something new!</a></li>-->
-        <!--</ul>-->
-        <!--</div>-->
-        <!--</div>-->
-        <div class="footer-bottom">
-            <ul>
-                <li class="languages">
-                    <select class="form-control bfh-countries" data-country="US">
-                        <option value="">Select Language</option>
-                        <option>Spanish</option>
-                        <option>French</option>
-                        <option>German</option>
-                        <option>Italian</option>
-                    </select>
+<footer class="footer hidden-xs no-padder text-center-nav-xs">
+    <div class="bg hidden-xs ">
+        {if condition="$User.username eq '0'"}
+        <div class="dropdown dropup wrapper-sm clearfix">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <span class="thumb-sm avatar pull-left m-l-xs">
+                        <img src="" class="dker" alt="">
+                          <!--<i class="on b-black"></i>-->
+                      </span>
+                <span class="hidden-nav-xs clear">
+                        <span class="block m-l">
+                          <strong class="font-bold text-lt">未登录</strong>
+                          <b class="caret"></b>
+                        </span>
+                        <span class="text-muted text-xs block m-l">请点击注册或登录</span>
+                      </span>
+            </a>
+            <ul class="dropdown-menu animated fadeInRight aside text-left">
+                <li>
+                    <a href="">Help</a>
                 </li>
-                <li class="languages">
-                    <select class="form-control bfh-countries">
-                        <option value="MTQ">Martinique</option>
-                        <option value="MRT">Mauritania</option>
-                        <option value="MUS">Mauritius</option>
-                    </select>
+                <li class="divider"></li>
+                <li>
+                    <a href="/index.php/index/login">登录</a>
                 </li>
-                <li class="languages">
-                    <select class="form-control bfh-countries" data-country="US">
-                        <option value="">Safety Off</option>
-                        <option value="">Safety On</option>
-                    </select>
+                <li>
+                    <a href="/index.php/index/login/signup">注册</a>
                 </li>
-                <li><a href="" class="f-history">History</a></li>
-                <li><a href="" class="play-icon popup-with-zoom-anim f-history f-help">Help</a></li>
             </ul>
         </div>
+        {else /}
+        <div class="dropdown dropup wrapper-sm clearfix">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <span class="thumb-sm avatar pull-left m-l-xs">
+                        <img src="{$User.photo}" class="dker" alt="">
+                          <!--<i class="on b-black"></i>-->
+                      </span>
+                <span class="hidden-nav-xs clear">
+                        <span class="block m-l">
+                          <strong class="font-bold text-lt">{$User.username}</strong>
+                          <b class="caret"></b>
+                        </span>
+                        <!--<span class="text-muted text-xs block m-l">Art Director</span>-->
+                      </span>
+            </a>
+            <ul class="dropdown-menu animated fadeInRight aside text-left">
+                <li>
+                    <span class="arrow bottom hidden-nav-xs"></span>
+                    <a href="/index.php/index/account/setting">个人设置</a>
+                </li>
+                <li>
+                    <a href="/index.php/index/account">我的主页</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="badge bg-danger pull-right">3</span>
+                        我的消息
+                    </a>
+                </li>
+                <li>
+                    <a href="">使用帮助</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="/index.php/index/login/logout"  >退出登录</a>
+                </li>
+            </ul>
+        </div>
+        {/if}
+
     </div>
-</div>
-<!-- //footer -->
+</footer>
