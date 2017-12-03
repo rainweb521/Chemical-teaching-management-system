@@ -14,7 +14,7 @@ class Common extends Controller {
         header("Content-type: text/html; charset=utf-8");
         error_reporting(E_ERROR | E_WARNING | E_PARSE);
         parent::__construct();
-        $this->_initialize();
+//        $this->_initialize();
         $this->_init();
     }
     protected function _initialize(){

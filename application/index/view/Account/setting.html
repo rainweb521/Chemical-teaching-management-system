@@ -2,7 +2,7 @@
 <html lang="en" class="app">
 <head>  
   <meta charset="utf-8" />
-  <title>Musik | Web Application</title>
+  <title>中学化学教学系统</title>
   <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" href="/public/test/css/jplayer.flat.css" type="text/css" />
@@ -47,18 +47,18 @@
                   <section class="panel panel-default">
                     <header class="panel-heading font-bold">修改邮箱</header>
                     <div class="panel-body">
-                      <form class="bs-example form-horizontal">
+                      <form class="bs-example form-horizontal" action="/index.php/index/account/email_update" method="post">
                         <div class="form-group">
                           <label class="col-lg-2 control-label">旧的邮箱</label>
                           <div class="col-lg-10">
-                            <input type="password" class="form-control" placeholder="输入旧的邮箱">
+                            <input type="email" name="old_email" required="required" class="form-control" placeholder="输入旧的邮箱">
                             <!--<span class="help-block m-b-none">Example block-level help text here.</span>-->
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="col-lg-2 control-label">新的邮箱</label>
                           <div class="col-lg-10">
-                            <input type="password" class="form-control" placeholder="输入新的邮箱">
+                            <input type="email" name="new_email" required="required" class="form-control" placeholder="输入新的邮箱">
                           </div>
                         </div>
                         <div class="form-group">
@@ -74,18 +74,18 @@
                   <section class="panel panel-default">
                     <header class="panel-heading font-bold">修改密码</header>
                     <div class="panel-body">
-                      <form class="bs-example form-horizontal">
+                      <form class="bs-example form-horizontal" method="post" action="/index.php/index/account/pass_update">
                         <div class="form-group">
                           <label class="col-lg-2 control-label">旧密码</label>
                           <div class="col-lg-10">
-                            <input type="password" class="form-control" placeholder="输入旧密码">
+                            <input type="password" name="old_password" required="required" class="form-control" placeholder="输入旧密码">
                             <!--<span class="help-block m-b-none">Example block-level help text here.</span>-->
                           </div>
                         </div>
                         <div class="form-group">
                           <label class="col-lg-2 control-label">新密码</label>
                           <div class="col-lg-10">
-                            <input type="password" class="form-control" placeholder="输入新密码">
+                            <input type="password" name="new_password" required="required" class="form-control" placeholder="输入新密码">
                           </div>
                         </div>
                         <div class="form-group">
@@ -104,7 +104,7 @@
                   其他信息
                 </header>
                 <div class="panel-body">
-                  <form class="form-horizontal" method="get">
+                  <form class="form-horizontal" enctype="multipart/form-data" method="post" action="/index.php/index/account/other_update">
                     <div class="line line-dashed b-b line-lg pull-in"></div>
                     <div class="form-group">
                       <label class="col-sm-2 control-label">性别</label>
@@ -115,9 +115,9 @@
                             <span class="caret"></span>
                           </button>
                           <ul class="dropdown-menu dropdown-select">
-                            <li><input type="radio" name="d-s-c-1"><a href="#">男</a></li>
-                            <li><input type="radio" name="d-s-c-1"><a href="#">女</a></li>
-                            <li><input type="radio" name="d-s-c-1"><a href="#">保密</a></li>
+                            <li><input type="radio" name="sex" value="男" required="required"><a href="#">男</a></li>
+                            <li><input type="radio" name="sex" value="女" required="required"><a href="#">女</a></li>
+                            <li><input type="radio" name="sex" value="保密" required="required"><a href="#">保密</a></li>
                           </ul>
                         </div>
                       </div>
@@ -126,7 +126,7 @@
                     <div class="form-group">
                       <label class="col-sm-2 control-label">生日</label>
                       <div class="col-sm-10">
-                        <input class="input-sm input-s datepicker-input form-control" size="16" type="text" value="12-02-2013" data-date-format="dd-mm-yyyy" >
+                        <input  required="required" name="birthday" class="input-sm input-s datepicker-input form-control" size="16" type="text" value="" data-date-format="dd-mm-yyyy" >
                       </div>
                     </div>
                     <div class="line line-dashed b-b line-lg pull-in"></div>
@@ -148,12 +148,12 @@
                             <span class="caret"></span>
                           </button>
                           <ul class="dropdown-menu dropdown-select">
-                            <li><input type="radio" name="d-s-c-1"><a href="#">初一</a></li>
-                            <li><input type="radio" name="d-s-c-1"><a href="#">初二</a></li>
-                            <li><input type="radio" name="d-s-c-1"><a href="#">初三</a></li>
-                            <li><input type="radio" name="d-s-c-1"><a href="#">高一</a></li>
-                            <li><input type="radio" name="d-s-c-1"><a href="#">高二</a></li>
-                            <li><input type="radio" name="d-s-c-1"><a href="#">高三</a></li>
+                            <li><input type="radio" value="初一" name="grade" required="required"><a href="#">初一</a></li>
+                            <li><input type="radio" value="初二" name="grade" required="required"><a href="#">初二</a></li>
+                            <li><input type="radio" value="初三" name="grade" required="required"><a href="#">初三</a></li>
+                            <li><input type="radio" value="高一" name="grade" required="required"><a href="#">高一</a></li>
+                            <li><input type="radio" value="高二" name="grade" required="required"><a href="#">高二</a></li>
+                            <li><input type="radio" value="高三" name="grade" required="required"><a href="#">高三</a></li>
                             <!--<li class="disabled"><input type="radio" name="d-s-r" disabled=""><a href="#">I'm disabled</a></li>-->
                           </ul>
                         </div>
@@ -175,42 +175,42 @@
                     <div class="form-group">
                       <label class="col-sm-2 control-label">所在地区</label>
                       <div class="col-sm-10">
-                        <select style="width:260px" class="chosen-select">
+                        <select style="width:260px" required="required" name="address" class="chosen-select">
                             <optgroup label="">
-                              <option value="AK">BJ - 北京</option>
-                              <option value="HI">TJ - 天津</option>
-                              <option value="HI">HE - 河北</option>
-                              <option value="HI">SX - 山西</option>
-                              <option value="HI">NM - 内蒙古</option>
-                              <option value="HI">LN - 辽宁</option>
-                              <option value="HI">JL - 吉林</option>
-                              <option value="HI">HL - 黑龙江</option>
-                              <option value="HI">SH - 上海</option>
-                              <option value="HI">JS - 江苏</option>
-                              <option value="HI">ZJ - 浙江</option>
-                              <option value="HI">AH - 安徽</option>
-                              <option value="HI">FJ - 福建</option>
-                              <option value="HI">JX - 江西</option>
-                              <option value="HI">SD - 山东</option>
-                              <option value="HI">HA - 河南</option>
-                              <option value="HI">HB - 湖北</option>
-                              <option value="HI">HN - 湖南</option>
-                              <option value="HI">GX - 广西</option>
-                              <option value="HI">GD - 广东</option>
-                              <option value="HI">HI - 海南</option>
-                              <option value="HI">CQ - 重庆</option>
-                              <option value="HI">SC - 四川</option>
-                              <option value="HI">GZ - 贵州</option>
-                              <option value="HI">YN - 云南</option>
-                              <option value="HI">XZ - 西藏</option>
-                              <option value="HI">SN - 陕西</option>
-                              <option value="HI">GS - 甘肃</option>
-                              <option value="HI">QH - 青海</option>
-                              <option value="HI">NX - 宁夏</option>
-                              <option value="HI">XJ - 新疆</option>
-                              <option value="HI">HK - 香港</option>
-                              <option value="HI">MO - 澳门</option>
-                              <option value="HI">TW - 台湾</option>
+                              <option value="北京">BJ - 北京</option>
+                              <option value="天津">TJ - 天津</option>
+                              <option value="河北">HE - 河北</option>
+                              <option value="山西">SX - 山西</option>
+                              <option value="内蒙古">NM - 内蒙古</option>
+                              <option value="辽宁">LN - 辽宁</option>
+                              <option value="吉林">JL - 吉林</option>
+                              <option value="黑龙江">HL - 黑龙江</option>
+                              <option value="上海">SH - 上海</option>
+                              <option value="江苏">JS - 江苏</option>
+                              <option value="浙江">ZJ - 浙江</option>
+                              <option value="安徽">AH - 安徽</option>
+                              <option value="福建">FJ - 福建</option>
+                              <option value="江西">JX - 江西</option>
+                              <option value="山东">SD - 山东</option>
+                              <option value="河南">HA - 河南</option>
+                              <option value="湖北">HB - 湖北</option>
+                              <option value="湖南">HN - 湖南</option>
+                              <option value="广西">GX - 广西</option>
+                              <option value="广东">GD - 广东</option>
+                              <option value="海南">HI - 海南</option>
+                              <option value="重庆">CQ - 重庆</option>
+                              <option value="四川">SC - 四川</option>
+                              <option value="贵州">GZ - 贵州</option>
+                              <option value="云南">YN - 云南</option>
+                              <option value="西藏">XZ - 西藏</option>
+                              <option value="陕西">SN - 陕西</option>
+                              <option value="甘肃">GS - 甘肃</option>
+                              <option value="青海">QH - 青海</option>
+                              <option value="宁夏">NX - 宁夏</option>
+                              <option value="新疆">XJ - 新疆</option>
+                              <option value="香港">HK - 香港</option>
+                              <option value="澳门">MO - 澳门</option>
+                              <option value="台湾">TW - 台湾</option>
                             </optgroup>
                             <!--<optgroup label="Pacific Time Zone">-->
                                 <!--<option value="CA">California</option>-->
@@ -240,14 +240,14 @@
                     <div class="form-group">
                       <label class="col-sm-2 control-label">上传头像</label>
                       <div class="col-sm-10">
-                        <input type="file" class="filestyle" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
+                        <input type="file" name="photo" class="filestyle" data-icon="false" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
                       </div>
                     </div>
                     <div class="line line-dashed b-b line-lg pull-in"></div>
                     <div class="form-group">
                       <label class="col-sm-2 control-label">个人介绍</label>
                       <div class="col-sm-10">
-                        <textarea rows="5" cols="60"></textarea>
+                        <textarea rows="5" required="required" name="introduce" cols="60"></textarea>
                       </div>
                     </div>
 
@@ -255,7 +255,7 @@
                     <div class="line line-dashed b-b line-lg pull-in"></div>
                     <div class="form-group">
                       <div class="col-sm-4 col-sm-offset-2">
-                        <button type="submit" class="btn btn-default">返回</button>
+                        <button type="button" class="btn btn-default">返回</button>
                         <button type="submit" class="btn btn-primary">保存修改</button>
                       </div>
                     </div>

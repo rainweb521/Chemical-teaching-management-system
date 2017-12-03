@@ -74,6 +74,7 @@ class Index extends Common {
         /** 加载 评论 */
         $comment_model = new CommentM();
         $comment = $comment_model->get_CommentM_List(array('e_id'=>$e_id));
+        $comments = $comment_model->get_Comments_Num(array('e_id'=>$e_id));
 //        var_dump($comment);
 //        echo "<br><br>";
 //        foreach ($comment as $line){
@@ -82,7 +83,7 @@ class Index extends Common {
 //            echo "<br><br>";
 //        }
 //        exit();
-        return \view('play',array('data'=>$data,'new_data'=>$new_data,'comment_list'=>$comment));
+        return \view('play',array('data'=>$data,'comments'=>$comments,'new_data'=>$new_data,'comment_list'=>$comment));
     }
     public function test(){
         $e_id = Request::instance()->get('e_id',1);

@@ -21,6 +21,11 @@ class CommentM extends Model{
         $data = CommentM::where($where)->find();
         return $data->getData();
     }
+    public function get_Comments_Num($where=null){
+        $where['state'] = 1;
+        $list = CommentM::where($where)->select();
+        return count($list);
+    }
     public function insert_CommentMInfo($data){
         CommentM::save($data);
         $e_id = $this->get_CommentMInfo($data);
@@ -29,8 +34,14 @@ class CommentM extends Model{
     public function save_ExperimentInfo($data,$where){
         CommentM::save($data,$where);
     }
-    public function get_Experiment_New_List($num,$where=null){
+    public function get_CommentM_New_List($num,$where=null){
+        $where['state'] = 1;
         $list = CommentM::where($where)->limit($num)->select();
+        return $list;
+    }
+    public function get_CommentM_List2($where=null){
+        $where['state'] = 1;
+        $list = CommentM::where($where)->select();
         return $list;
     }
     public function get_CommentM_List($where=null){

@@ -2,7 +2,7 @@
 <html lang="en" class="app">
 <head>  
   <meta charset="utf-8" />
-  <title>Musik | Web Application</title>
+  <title>中学化学教学系统</title>
   <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" href="/public/test/css/jplayer.flat.css" type="text/css" />
@@ -48,25 +48,25 @@
                       <div class="wrapper">
                         <div class="text-center m-b m-t">
                           <a href="#" class="thumb-lg">
-                            <img src="/public/test/picture/a0.png" class="img-circle">
+                            <img src="{$data.photo}" class="img-circle">
                           </a>
                           <div>
-                            <div class="h3 m-t-xs m-b-xs">John.Smith</div>
-                            <small class="text-muted"><i class="fa fa-map-marker"></i> London, UK</small>
+                            <div class="h3 m-t-xs m-b-xs">{$data.username}</div>
+                            <small class="text-muted"><i class="fa fa-map-marker"></i>{$data.address}</small>
                           </div>                
                         </div>
                         <div class="panel wrapper">
                           <div class="row text-center">
                             <div class="col-xs-6">
                               <a href="#">
-                                <span class="m-b-xs h4 block">245</span>
-                                <small class="text-muted">已评论</small>
+                                <span class="m-b-xs h4 block">{$data.comments}</span>
+                                <small class="text-muted">个人评论</small>
                               </a>
                             </div>
                             <div class="col-xs-6">
                               <a href="#">
-                                <span class="m-b-xs h4 block">55</span>
-                                <small class="text-muted">已回复</small>
+                                <span class="m-b-xs h4 block">{$data.comments_admin}</span>
+                                <small class="text-muted">系统回复</small>
                               </a>
                             </div>
                           </div>
@@ -88,7 +88,7 @@
                           <small class="text-uc text-xs text-muted">学习等级</small>
                           <p>一星级</p>
                           <small class="text-uc text-xs text-muted">个人介绍</small>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat.</p>
+                          <p>{$data.introduce}</p>
                           <div class="line"></div>
                           <!--<small class="text-uc text-xs text-muted">connection</small>-->
                           <!--<p class="m-t-sm">-->
@@ -105,9 +105,9 @@
                   <section class="vbox">
                     <header class="header bg-light lt">
                       <ul class="nav nav-tabs nav-white">
-                        <li class="active"><a href="#activity" data-toggle="tab">消息列表</a></li>
-                        <li class=""><a href="#events" data-toggle="tab">我的评论</a></li>
-                        <li class=""><a href="#interaction" data-toggle="tab">系统回复</a></li>
+                        <li class="active"><a href="#activity" data-toggle="tab">我的评论</a></li>
+                        <li class=""><a href="#events" data-toggle="tab">系统回复</a></li>
+                        <!--<li class=""><a href="#interaction" data-toggle="tab">系统回复</a></li>-->
                       </ul>
                     </header>
                     <section class="scrollable">
@@ -115,26 +115,18 @@
                         <div class="tab-pane active" id="activity">
                           <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-lg no-border">
 
-                            <li class="list-group-item" href="#email-content" data-toggle="class:show">
-                              <a href="#" class="thumb-sm pull-left m-r-sm">
-                                <img src="picture/a8.png" class="img-circle">
-                              </a>
-                              <a href="#" class="clear">
-                                <small class="pull-right">3 minuts ago</small>
-                                <strong class="block">Drew Wllon</strong>
-                                <small>Vestibulum ullamcorper sodales nisi nec sodales nisi nec sodales nisi nec...</small>
-                              </a>
-                            </li>
+                            {volist name="comment_list" id="line"}
                             <li class="list-group-item">
                               <a href="#" class="thumb-sm pull-left m-r-sm">
-                                <img src="picture/a9.png" class="img-circle">
+                                <img src="{$line.photo}" class="img-circle">
                               </a>
                               <a href="#" class="clear">
-                                <small class="pull-right">1 hour ago</small>
-                                <strong class="block">Jonathan George</strong>
-                                <small>Morbi nec nunc condimentum...</small>
+                                <small class="pull-right">{$line.add_time}</small>
+                                <strong class="block">在《{$line.e_title}》中评论</strong>
+                                <small>{$line.content}</small>
                               </a>
                             </li>
+                            {/volist}
                           </ul>
                         </div>
                         <div class="tab-pane" id="events">
@@ -142,42 +134,19 @@
                             <!--<i class="fa fa-spinner fa fa-spin fa fa-large"></i>-->
                             <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-lg no-border">
 
-                              <li class="list-group-item" href="#email-content" data-toggle="class:show">
-                                <a href="#" class="thumb-sm pull-left m-r-sm">
-                                  <img src="picture/a8.png" class="img-circle">
-                                </a>
-                                <a href="#" class="clear">
-                                  <small class="pull-right">3 minuts ago</small>
-                                  <strong class="block">D32423 Wllon</strong>
-                                  <small>Vestibulum ullamcorper sodales nisi nec sodales nisi nec sodales nisi nec...</small>
-                                </a>
-                              </li>
+                              {volist name="comment_admin" id="line"}
                               <li class="list-group-item">
                                 <a href="#" class="thumb-sm pull-left m-r-sm">
-                                  <img src="picture/a9.png" class="img-circle">
+                                  <img src="{$line.photo}" class="img-circle">
                                 </a>
                                 <a href="#" class="clear">
-                                  <small class="pull-right">1 hour ago</small>
-                                  <strong class="block">Jonathan George</strong>
-                                  <small>Morbi nec nunc condimentum...</small>
+                                  <small class="pull-right">{$line.add_time}</small>
+                                  <strong class="block">在《{$line.e_title}》中回复</strong>
+                                  <small>{$line.content}</small>
                                 </a>
                               </li>
+                              {/volist}
                             </ul>
-                          </div>
-                        </div>
-                        <div class="tab-pane" id="interaction">
-                          <div class="text-center wrapper">
-                            <li class="list-group-item">
-                              <a href="#" class="thumb-sm pull-left m-r-sm">
-                                <img src="picture/a9.png" class="img-circle">
-                              </a>
-                              <a href="#" class="clear">
-                                <small class="pull-right">1 hour ago</small>
-                                <strong class="block">Jonathan George</strong>
-                                <small>Morbi nec nunc condimentum...</small>
-                              </a>
-                            </li>
-                            <!--<i class="fa fa-spinner fa fa-spin fa fa-large"></i>-->
                           </div>
                         </div>
                       </div>
@@ -190,18 +159,13 @@
                       <div class="panel">
                         <h4 class="font-thin padder">最近评论</h4>
                         <ul class="list-group">
+                          {volist name="comment_new" id="line"}
                           <li class="list-group-item">
-                              <p>Wellcome <a href="#" class="text-info">@Drew Wllon</a> and play this web application template, have fun1 </p>
-                              <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 minuts ago</small>
+                            <p><a href="#" class="text-info">@{$line.username}</a> 在《{$line.e_title}》评论：{$line.content}</p>
+                            <small class="block text-muted"><i class="fa fa-clock-o"></i> {$line.add_time}</small>
                           </li>
-                          <li class="list-group-item">
-                              <p>Morbi nec <a href="#" class="text-info">@Jonathan George</a> nunc condimentum ipsum dolor sit amet, consectetur</p>
-                              <small class="block text-muted"><i class="fa fa-clock-o"></i> 1 hour ago</small>
-                          </li>
-                          <li class="list-group-item">                     
-                              <p><a href="#" class="text-info">@Josh Long</a> Vestibulum ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis</p>
-                              <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 hours ago</small>
-                          </li>
+                          {/volist}
+
                         </ul>
                       </div>
                       <!--<div class="panel clearfix">-->

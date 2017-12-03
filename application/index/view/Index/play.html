@@ -107,11 +107,11 @@
                       <div class="text-muted">
                         <i class="fa fa-user icon-muted"></i> by <a href="#" class="m-r-sm">Admin</a>
                         <i class="fa fa-clock-o icon-muted"></i> {$data.add_time}
-                        <a href="#" class="m-l-sm"><i class="fa fa-comment-o icon-muted"></i> 3 comments</a>
+                        <a href="#" class="m-l-sm"><i class="fa fa-comment-o icon-muted"></i> {$comments} comments</a>
                       </div>
                     </div>
                   </div>
-                  <h4 class="m-t-lg m-b">3 Comments</h4>
+                  <h4 class="m-t-lg m-b">{$comments} Comments</h4>
                   <section class="comment-list block">
                     {volist name="comment_list" id="comment"}
                     <article id="comment-id-1" class="comment-item">
