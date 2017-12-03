@@ -2,7 +2,7 @@
 <html lang="en" class="app">
 <head>  
   <meta charset="utf-8" />
-  <title>Musik | Web Application</title>
+  <title>中学化学教学系统</title>
   <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" href="/public/test/css/jplayer.flat.css" type="text/css" />
@@ -94,76 +94,85 @@
                     </div>
                     <!-- / video player -->
                     <div class="wrapper-lg">
-                      <h2 class="m-t-none text-black">Big Buck Bunny Trailer</h2>
+                      <h2 class="m-t-none text-black">{$data.title}</h2>
                       <div class="post-sum">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat. 
-                        <br><br>
-                        Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</p>
+                        <p>
+                          实验简介：{$data.profile}<br><br>
+                          实验器材：{$data.material}<br><br>
+                          实验重点：{$data.focus}<br><br>
+                          实验内容：{$data.content}
+                        </p>
                       </div>
                       <div class="line b-b"></div>
                       <div class="text-muted">
                         <i class="fa fa-user icon-muted"></i> by <a href="#" class="m-r-sm">Admin</a>
-                        <i class="fa fa-clock-o icon-muted"></i> Feb 20, 2013
+                        <i class="fa fa-clock-o icon-muted"></i> {$data.add_time}
                         <a href="#" class="m-l-sm"><i class="fa fa-comment-o icon-muted"></i> 3 comments</a>
                       </div>
                     </div>
                   </div>
                   <h4 class="m-t-lg m-b">3 Comments</h4>
                   <section class="comment-list block">
+                    {volist name="comment_list" id="comment"}
                     <article id="comment-id-1" class="comment-item">
                       <a class="pull-left thumb-sm">
-                        <img src="picture/a0.png" class="img-circle">
+                        <img src="{$comment['lord'][0]['photo']}" class="img-circle">
                       </a>
                       <section class="comment-body m-b">
                         <header>
-                          <a href="#"><strong>John smith</strong></a>
-                          <label class="label bg-info m-l-xs">Editor</label> 
+                          <a href="#"><strong>{$comment['lord'][0]['username']}</strong></a>
+                          <label class="label bg-info m-l-xs">{$comment['lord'][0]['type']}</label>
                           <span class="text-muted text-xs block m-t-xs">
-                            24 minutes ago
+                            {$comment['lord'][0]['add_time']}
                           </span>
                         </header>
-                        <div class="m-t-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum.</div>
+                        <div class="m-t-sm">{$comment['lord'][0]['content']}</div>
                       </section>
                     </article>
+                    {if condition="$comment['lord'][0]['node'] neq '0'"}
+                      <article id="comment-id-2" class="comment-item comment-reply">
+                        <a class="pull-left thumb-sm">
+                          <img src="{$comment['from'][0]['photo']}" class="img-circle">
+                        </a>
+                        <section class="comment-body m-b">
+                          <header>
+                            <a href="#"><strong>{$comment['from'][0]['username']}</strong></a>
+                            <label class="label bg-dark m-l-xs">{$comment['from'][0]['type']}</label>
+                            <span class="text-muted text-xs block m-t-xs">
+                              {$comment['from'][0]['add_time']}
+                            </span>
+                          </header>
+                          <div class="m-t-sm">{$comment['from'][0]['content']}</div>
+                        </section>
+                      </article>
+                    {/if}
+                    {/volist}
                     <!-- .comment-reply -->
-                    <article id="comment-id-2" class="comment-item comment-reply">
-                      <a class="pull-left thumb-sm">
-                        <img src="picture/a1.png" class="img-circle">
-                      </a>
-                      <section class="comment-body m-b">
-                        <header>
-                          <a href="#"><strong>John smith</strong></a>
-                          <label class="label bg-dark m-l-xs">Admin</label> 
-                          <span class="text-muted text-xs block m-t-xs">
-                            26 minutes ago
-                          </span>
-                        </header>
-                        <div class="m-t-sm">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</div>
-                      </section>
-                    </article>
+
 
                     <!-- / .comment-reply -->
-                    <article id="comment-id-2" class="comment-item">
-                      <a class="pull-left thumb-sm">
-                        <img src="picture/a2.png" class="img-circle">
-                      </a>
-                      <section class="comment-body m-b">
-                        <header>
-                          <a href="#"><strong>John smith</strong></a>
-                          <label class="label bg-dark m-l-xs">Admin</label> 
-                          <span class="text-muted text-xs block m-t-xs">
-                            26 minutes ago
-                          </span>
-                        </header>
-                        <blockquote class="m-t">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                          <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-                        </blockquote>
-                        <div class="m-t-sm">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</div>
-                      </section>
-                    </article>
+                    <!--<article id="comment-id-2" class="comment-item">-->
+                      <!--<a class="pull-left thumb-sm">-->
+                        <!--<img src="picture/a2.png" class="img-circle">-->
+                      <!--</a>-->
+                      <!--<section class="comment-body m-b">-->
+                        <!--<header>-->
+                          <!--<a href="#"><strong>John smith</strong></a>-->
+                          <!--<label class="label bg-dark m-l-xs">Admin</label> -->
+                          <!--<span class="text-muted text-xs block m-t-xs">-->
+                            <!--26 minutes ago-->
+                          <!--</span>-->
+                        <!--</header>-->
+                        <!--&lt;!&ndash;<blockquote class="m-t">&ndash;&gt;-->
+                          <!--&lt;!&ndash;<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>&ndash;&gt;-->
+                          <!--&lt;!&ndash;<small>Someone famous in <cite title="Source Title">Source Title</cite></small>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</blockquote>&ndash;&gt;-->
+                        <!--<div class="m-t-sm">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</div>-->
+                      <!--</section>-->
+                    <!--</article>-->
                   </section>
                   <h4 class="m-t-lg m-b">更多评论</h4>
+                  {if condition="$User.username neq '0'"}
                   <form method="post" action="/index.php/index/index/comment">
                     <!--<div class="form-group pull-in clearfix">-->
                       <!--<div class="col-sm-6">-->
@@ -186,57 +195,38 @@
                       <button type="submit" class="btn btn-success">提交评论</button>
                     </div>
                   </form>
+                  {/if}
+                  {if condition="$User.username eq '0'"}
+                  <form method="" action="">
+                    <div class="form-group">
+                      <label>我的评论</label>
+                      <input type="hidden" name="tip" value="1">
+                      <input type="hidden" name="e_id" value="">
+                      <input type="hidden" name="e_title" value="">
+                      <textarea class="form-control" name="content" rows="5" disabled="disabled" placeholder="未登录不可评论"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <button type="button" class="btn btn-success">提交评论</button>
+                    </div>
+                  </form>
+                  {/if}
                 </div>
                 <div class="col-sm-4">
                   <div class="panel panel-default">
                     <div class="panel-heading">最新实验视频 6个</div>
                     <div class="panel-body">
 
+                      {volist name="new_data" id="data"}
                       <article class="media">
                         <a href="#" class="pull-left thumb-lg m-t-xs">
-                          <img src="/public/test/picture/m41.jpg">
+                          <img src="{$data.picture}">
                         </a>
                         <div class="media-body">                        
-                          <a href="#" class="font-semibold">Lorem ipsum dolor sit amet it.</a>
-                          <div class="text-xs block m-t-xs"><a href="#">Design</a> 2 hours ago</div>
+                          <a href="#" class="font-semibold">{$data.title}</a>
+                          <div class="text-xs block m-t-xs"><a href="#">MFC</a> {$data.add_time}</div>
                         </div>
                       </article>
-                      <article class="media">
-                        <a href="#" class="pull-left thumb-lg m-t-xs">
-                          <img src="/public/test/picture/m42.jpg">
-                        </a>
-                        <div class="media-body">                        
-                          <a href="#" class="font-semibold">Sed diam nonummy tincidunt ut laoreet</a>
-                          <div class="text-xs block m-t-xs"><a href="#">MFC</a> 1 week ago</div>
-                        </div>
-                      </article>
-                      <article class="media">
-                        <a href="#" class="pull-left thumb-lg m-t-xs">
-                          <img src="/public/test/picture/m43.jpg">
-                        </a>
-                        <div class="media-body">                        
-                          <a href="#" class="font-semibold">Lonummy nibh euismod sed laoreet</a>
-                          <div class="text-xs block m-t-xs"><a href="#">MFC</a> 1 week ago</div>
-                        </div>
-                      </article>
-                      <article class="media">
-                        <a href="#" class="pull-left thumb-lg m-t-xs">
-                          <img src="/public/test/picture/m44.jpg">
-                        </a>
-                        <div class="media-body">                        
-                          <a href="#" class="font-semibold">Mibh euismod tincidunt ut laoreet</a>
-                          <div class="text-xs block m-t-xs"><a href="#">MFC</a> 1 week ago</div>
-                        </div>
-                      </article>
-                      <article class="media">
-                        <a href="#" class="pull-left thumb-lg m-t-xs">
-                          <img src="/public/test/picture/m45.jpg">
-                        </a>
-                        <div class="media-body">                        
-                          <a href="#" class="font-semibold">Siam nonummy nibh oreet</a>
-                          <div class="text-xs block m-t-xs"><a href="#">MFC</a> 1 week ago</div>
-                        </div>
-                      </article>
+                      {/volist}
                     </div>
                   </div>
                 </div>

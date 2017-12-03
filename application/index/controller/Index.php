@@ -1,5 +1,6 @@
 <?php
 namespace app\index\controller;
+use app\config\model\CommentM;
 use app\config\model\Experiment;
 use app\config\model\filebed;
 use app\config\model\key_password;
@@ -68,7 +69,20 @@ class Index extends Common {
         if ($e_id==0){$e_id=1;}
         $experiment_model = new Experiment();
         $data = $experiment_model->get_ExperimentInfo(array('e_id'=>$e_id));
-        return \view('play',array('data'=>$data));
+        /** 加载 最新视频 */
+        $new_data = $experiment_model->get_Experiment_New_List(6);
+        /** 加载 评论 */
+        $comment_model = new CommentM();
+        $comment = $comment_model->get_CommentM_List(array('e_id'=>$e_id));
+//        var_dump($comment);
+//        echo "<br><br>";
+//        foreach ($comment as $line){
+////            echo($line[0]['username']);
+//            var_dump($line['lord'][0]["c_id"]);
+//            echo "<br><br>";
+//        }
+//        exit();
+        return \view('play',array('data'=>$data,'new_data'=>$new_data,'comment_list'=>$comment));
     }
     public function test(){
         $e_id = Request::instance()->get('e_id',1);
@@ -92,6 +106,11 @@ class Index extends Common {
                 $data['add_time'] = date('Y-m-d');
                 $data['state'] = 1;
                 $data['status'] = 1;
+                $data['node'] = 0;
+                $data['type'] = 'User';
+                $comment_model = new CommentM();
+                $comment_model->insert_CommentMInfo($data);
+                $this->success('评论成功');
             }
         }
         $this->error('您还未登录');
