@@ -16,6 +16,7 @@ class Common extends Controller {
         parent::__construct();
 //        $this->_initialize();
         $this->_init();
+        $this->assign('title','中学化学教学系统');
     }
     protected function _initialize(){
         //只报告错误,忽略通知
