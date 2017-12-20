@@ -14,9 +14,19 @@ class Experiment extends Common{
     }
     public function form_text(){
         $tip = Request::instance()->post('tip',0);
+        /**
+         * 0 ，2:代表进入请求
+         * 1：代表提交请求
+         *
+         */
+        $experiment_model = new \app\config\model\Experiment();
         if ($tip==0){
             return view('form_text',array('e_id'=>0));
-        }else {
+        }else if ($tip==2){
+            $e_id = Request::instance()->get('e_id',0);
+            $data = $experiment_model->get_ExperimentInfo(array('e_id'=>$e_id));
+            return view('form_text',array('data'=>$data,'e_id'=>$e_id));
+        }else{
               /**  `e_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '实验信息的表',
               `title` char(255) DEFAULT NULL COMMENT '实验标题',
               `profile` text COMMENT '实验简介',
@@ -39,20 +49,35 @@ class Experiment extends Common{
               `video_time` char(255) DEFAULT NULL COMMENT '视频时长',
 
                */
-
-            $data['title'] = Request::instance()->post('title','');
-            $data['profile'] = Request::instance()->post('profile','');
-            $data['content'] = Request::instance()->post('content','');
-            $data['add_time'] = date('Y-m-d');
-            $data['focus'] = Request::instance()->post('focus','');
-            $data['material'] = Request::instance()->post('material','');
-            $data['state'] = 1;
-            $data['status_grade'] = Request::instance()->port('status_grade',1);
-            $data['status_react'] = Request::instance()->port('status_grade',1);
-            $data['uploader'] = Request::instance()->port('uploader','');
-            $experiment_model = new \app\config\model\Experiment();
-            $e_id = $experiment_model->insert_ExperimentInfo($data);
-            return \view('form_video',array('e_id'=>$e_id));
+            $e_id = Request::instance()->get('e_id',0);
+            if ($e_id!=0){
+                $data = $experiment_model->get_ExperimentInfo(array('e_id'=>$e_id));
+                $data['title'] = Request::instance()->post('title','');
+                $data['profile'] = Request::instance()->post('profile','');
+                $data['content'] = Request::instance()->post('content','');
+//                $data['add_time'] = date('Y-m-d');
+                $data['focus'] = Request::instance()->post('focus','');
+                $data['material'] = Request::instance()->post('material','');
+//                $data['state'] = 1;
+                $data['status_grade'] = Request::instance()->port('status_grade',1);
+                $data['status_react'] = Request::instance()->port('status_grade',1);
+                $data['uploader'] = Request::instance()->port('uploader','');
+                $experiment_model->save_ExperimentInfo($data,array('e_id'=>$e_id));
+                return \view('form_video',array('e_id'=>$e_id));
+            }else{
+                $data['title'] = Request::instance()->post('title','');
+                $data['profile'] = Request::instance()->post('profile','');
+                $data['content'] = Request::instance()->post('content','');
+                $data['add_time'] = date('Y-m-d');
+                $data['focus'] = Request::instance()->post('focus','');
+                $data['material'] = Request::instance()->post('material','');
+                $data['state'] = 1;
+                $data['status_grade'] = Request::instance()->port('status_grade',1);
+                $data['status_react'] = Request::instance()->port('status_grade',1);
+                $data['uploader'] = Request::instance()->port('uploader','');
+                $e_id = $experiment_model->insert_ExperimentInfo($data);
+                return \view('form_video',array('e_id'=>$e_id));
+            }
         }
 
 
@@ -95,5 +120,11 @@ class Experiment extends Common{
 
         }
 
+    }
+    public function delete(){
+        $e_id = Request::instance()->get('e_id');
+        $experiment = new \app\config\model\Experiment();
+        $experiment->delete_ExperimentInfo($e_id);
+        $this->success('删除成功');
     }
 }

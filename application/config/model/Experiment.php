@@ -38,10 +38,8 @@ class Experiment extends Model{
         return $list;
     }
     public function delete_ExperimentInfo($id){
-        $data = $this->get_filebedInfo(array('id'=>$id));
-        $data['state'] = 3;
-        $data['out_time'] = date('Y-m-d');
-        Experiment::save($data,['id'=>$id]);
+        /** 因为懒得写了，所以这里只删除了数据库中的记录，并没有真正的删除视频和图片文件 */
+        Experiment::where(array('e_id'=>$id))->delete();
     }
     public function get_Blank(){
         $data['title'] = '';

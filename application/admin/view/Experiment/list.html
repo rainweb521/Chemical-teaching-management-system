@@ -20,22 +20,11 @@
 
 <body data-type="generalComponents">
 
-
     {include file="Index/header"/}
-
-
-
-
-
-
 
     <div class="tpl-page-container tpl-page-header-fixed">
 
         {include file="Index/menu"/}
-
-
-
-
 
         <div class="tpl-content-wrapper">
             <!--<div class="tpl-content-page-title">-->
@@ -68,7 +57,7 @@
                                 <div class="am-btn-group am-btn-group-xs">
                                     <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
                                     <!--<button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>-->
-                                    <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>
+                                    <!--<button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>-->
                                     <!--<button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>-->
                                 </div>
                             </div>
@@ -124,9 +113,9 @@
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs tpl-edit-content-btn">
                                                 <button id="view" onclick='view("{$line.e_id}")' type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-eye"></span> 查看</button>
-                                                <button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-edit"></span> 编辑</button>
-                                                <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>
-                                                <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
+                                                <button type="button" onclick="location.href='/admin.php/admin/experiment/form_text?tip=1&e_id={$line.e_id}';" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-edit"></span> 编辑</button>
+                                                <button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 显示</button>
+                                                <button type="button" onclick="location.href='/admin.php/admin/experiment/delete?e_id={$line.e_id}';" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
                                             </div>
                                         </div>
                                     </div>
