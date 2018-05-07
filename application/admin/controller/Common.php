@@ -8,8 +8,11 @@ use \think\View;
 class Common extends Controller {
     public function __construct(){
         header("Content-type: text/html; charset=utf-8");
+        error_reporting(E_ERROR | E_WARNING | E_PARSE);
         parent::__construct();
-//        $this->_init();
+        $this->assign('title','中学化学教学管理系统');
+        $this->_init();
+
     }
     public function set_menu_active($num){
 
@@ -22,9 +25,10 @@ class Common extends Controller {
     {
         // 如果已经登录
         $isLogin = $this->isLogin();
+
         if (!$isLogin) {
             // 跳转到登录页面
-            $this->redirect('/index.php/index/login/index');
+            $this->redirect('/admin.php/admin/login');
 //            $url = '/index.php?c=login';
 //            echo "<script language=\"javascript\">";
 //            echo "location.href=\"$url\"";
@@ -38,7 +42,7 @@ class Common extends Controller {
      */
     public function getLoginUser()
     {
-        return session("User");
+        return session("admin");
     }
 
     /**
@@ -49,6 +53,7 @@ class Common extends Controller {
     {
         $user = $this->getLoginUser();
         if ($user && is_array($user)) {
+            $this->assign('admin',$user);
             return true;
         }
 

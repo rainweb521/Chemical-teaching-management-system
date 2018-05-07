@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$title}</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="/public/admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/public/admin/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="/public/admin/css/amazeui.min.css" />
+    <link rel="stylesheet" href="/public/admin/css/admin.css">
+    <link rel="stylesheet" href="/public/admin/css/app.css">
+    <script src="/public/admin/js/echarts.min.js"></script>
+</head>
+
+<body data-type="index">
+
+
+{include file="index/header"/}
+
+
+
+
+
+
+    <div class="tpl-page-container tpl-page-header-fixed">
+
+        {include file="index/menu"/}
+
+
+
+
+
+        <div class="tpl-content-wrapper">
+            <!--<div class="tpl-content-page-title">-->
+                <!--Amaze UI 首页组件-->
+            <!--</div>-->
+            <!--<ol class="am-breadcrumb">-->
+                <!--<li><a href="#" class="am-icon-home">首页</a></li>-->
+                <!--<li><a href="#">分类</a></li>-->
+                <!--<li class="am-active">内容</li>-->
+            <!--</ol>-->
+            <div class="tpl-content-scope">
+                <div class="note note-info">
+                    <h3>中学化学教学管理系统
+                        <span class="close" data-close="note"></span>
+                    </h3>
+                    <p> 教学管理系统含近 20 个 CSS 组件、20 余 JS 组件，更有多个包含不同主题的 Web 组件，可快速构建界面出色、体验优秀的跨屏页面，大幅提升开发效率。</p>
+                    <p><span class="label label-danger">提示:</span>中文排版，根据用户代理调整字体，实现更好的中文排版效果。
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+                    <div class="dashboard-stat blue">
+                        <div class="visual">
+                            <i class="am-icon-comments-o"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number"> 1349 </div>
+                            <div class="desc"> 今日游览数 </div>
+                        </div>
+                        <a class="more" href="#"> 查看更多
+                    <i class="m-icon-swapright m-icon-white"></i>
+                </a>
+                    </div>
+                </div>
+                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+                    <div class="dashboard-stat red">
+                        <div class="visual">
+                            <i class="am-icon-bar-chart-o"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number"> 62% </div>
+                            <div class="desc"> 今日上传视频 </div>
+                        </div>
+                        <a class="more" href="#"> 查看更多
+                    <i class="m-icon-swapright m-icon-white"></i>
+                </a>
+                    </div>
+                </div>
+                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+                    <div class="dashboard-stat green">
+                        <div class="visual">
+                            <i class="am-icon-apple"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number"> 653 </div>
+                            <div class="desc"> 今日注册用户 </div>
+                        </div>
+                        <a class="more" href="#"> 查看更多
+                    <i class="m-icon-swapright m-icon-white"></i>
+                </a>
+                    </div>
+                </div>
+                <div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+                    <div class="dashboard-stat purple">
+                        <div class="visual">
+                            <i class="am-icon-android"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number"> 786 </div>
+                            <div class="desc"> 今日留言 </div>
+                        </div>
+                        <a class="more" href="#"> 查看更多
+                    <i class="m-icon-swapright m-icon-white"></i>
+                </a>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="row">
+
+                <div class="am-u-md-6 am-u-sm-12 row-mb">
+                    <div class="tpl-portlet">
+                        <div class="tpl-portlet-title">
+                            <div class="tpl-caption font-green ">
+                                <span>最新留言</span>
+                            </div>
+
+                        </div>
+
+                        <div class="am-tabs tpl-index-tabs" data-am-tabs>
+                            <ul class="am-tabs-nav am-nav am-nav-tabs">
+                                <li class="am-active"><a href="#tab1">已回复</a></li>
+                                <li><a href="#tab2">未回复</a></li>
+                            </ul>
+
+                            <div class="am-tabs-bd">
+                                <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+                                    <div id="wrapperA" class="wrapper">
+                                        <div id="scroller" class="scroller">
+                                            <ul class="tpl-task-list tpl-task-remind">
+                                                <li>
+                                                    <div class="cosB">
+                                                        36分钟前
+                                                    </div>
+                                                    <div class="cosA">
+                                                        <span class="cosIco label-danger">
+                        <i class="am-icon-bolt"></i>
+                      </span>
+
+                                                        <span> FontAwesome 在不一致问题（v2.3 新增）。</span>
+                                                    </div>
+
+                                                </li>
+
+                                                <li>
+                                                    <div class="cosB">
+                                                        2小时前
+                                                    </div>
+                                                    <div class="cosA">
+                                                        <span class="cosIco label-info">
+                        <i class="am-icon-bullhorn"></i>
+                      </span>
+
+                                                        <span> 使用 flexbox 实现，只兼容 IE 10+ 及其他现代浏览器。</span>
+                                                    </div>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="am-tab-panel am-fade" id="tab2">
+                                    <div id="wrapperB" class="wrapper">
+                                        <div id="scroller" class="scroller">
+                                            <ul class="tpl-task-list tpl-task-remind">
+                                                <li>
+                                                    <div class="cosB">
+                                                        36分钟前
+                                                    </div>
+                                                    <div class="cosA">
+                                                        <span class="cosIco label-danger">
+                        <i class="am-icon-bolt"></i>
+                      </span>
+
+                                                        <span> FontAwe解决宽度不一致问题（v2.3 新增）。</span>
+                                                    </div>
+
+                                                </li>
+
+                                                <li>
+                                                    <div class="cosB">
+                                                        2小时前
+                                                    </div>
+                                                    <div class="cosA">
+                                                        <span class="cosIco label-info">
+                        <i class="am-icon-bullhorn"></i>
+                      </span>
+
+                                                        <span> 使用 flexbox 实IE 10+ 及其他现代浏览器。</span>
+                                                    </div>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="am-u-md-6 am-u-sm-12 row-mb">
+                    <div class="tpl-portlet">
+                        <div class="tpl-portlet-title">
+                            <div class="tpl-caption font-red ">
+                                <i class="am-icon-bar-chart"></i>
+                                <span>新注册用户</span>
+                            </div>
+                        </div>
+                        <div class="tpl-scrollable">
+
+                            <table class="am-table tpl-table">
+                                <thead>
+                                    <tr class="tpl-table-uppercase">
+                                        <th>人员</th>
+                                        <th>余额</th>
+                                        <th>次数</th>
+                                        <th>效率</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="/public/admin/img/user01.png" alt="" class="user-pic">
+                                            <a class="user-name" href="###">禁言小张</a>
+                                        </td>
+                                        <td>￥3213</td>
+                                        <td>65</td>
+                                        <td class="font-green bold">26%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="/public/admin/img/user02.png" alt="" class="user-pic">
+                                            <a class="user-name" href="###">Alex.</a>
+                                        </td>
+                                        <td>￥2635</td>
+                                        <td>52</td>
+                                        <td class="font-green bold">32%</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+    <script src="/public/admin/js/jquery.min.js"></script>
+    <script src="/public/admin/js/amazeui.min.js"></script>
+    <script src="/public/admin/js/iscroll.js"></script>
+    <script src="/public/admin/js/app.js"></script>
+</body>
+
+</html>

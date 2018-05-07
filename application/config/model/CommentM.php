@@ -44,6 +44,11 @@ class CommentM extends Model{
         $list = CommentM::where($where)->select();
         return $list;
     }
+    public function get_CommentM_List3($where=null){
+//        $where['state'] = 1;
+        $list = CommentM::where($where)->select();
+        return $list;
+    }
     public function get_CommentM_List($where=null){
         $where['state'] = 1;
         $where['status'] = 1;
@@ -69,7 +74,7 @@ class CommentM extends Model{
         $data = $this->get_filebedInfo(array('id'=>$id));
         $data['state'] = 3;
         $data['out_time'] = date('Y-m-d');
-        Experiment::save($data,['id'=>$id]);
+        ExperimentM::save($data,['id'=>$id]);
     }
     public function get_Blank(){
         $data['title'] = '';
@@ -90,7 +95,7 @@ class CommentM extends Model{
         $data = $this->get_filebedInfo($where);
         $data['state'] = 1;
         $data['out_time'] = date("Y-m-d", strtotime('+'.$day." day ".$data['out_time']));
-        Experiment::save($data,$where);
+        ExperimentM::save($data,$where);
     }
     /**
      * 将文件设置为过期，但不删除文件

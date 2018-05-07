@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\controller;
 use app\config\model\User;
-use app\config\model\Experiment;
+use app\config\model\ExperimentM;
 use think\Controller;
 use \think\Request;
 use \think\View;
@@ -23,8 +23,8 @@ class Account extends Common{
                 $data['email'] = Request::instance()->post('email','');
                 $data['password'] = Request::instance()->post('password','');
                 $data['registration_time'] = date('Y-m-d');
-                $data['state'] = Request::instance()->port('state',1);
-                $data['status'] = Request::instance()->port('status',1);
+                $data['state'] = Request::instance()->post('state',1);
+                $data['status'] = Request::instance()->post('status',1);
                 $user_model->insert_UserInfo($data);
                 $this->success('添加成功','/admin.php/admin/account/index');
             }else{
@@ -32,8 +32,8 @@ class Account extends Common{
                 $data['username'] = Request::instance()->post('username','');
                 $data['email'] = Request::instance()->post('email','');
                 $data['password'] = Request::instance()->post('password','');
-                $data['state'] = Request::instance()->port('state',1);
-                $data['status'] = Request::instance()->port('status',1);
+                $data['state'] = Request::instance()->post('state',1);
+                $data['status'] = Request::instance()->post('status',1);
                 $user_model->save_UserInfo($data,array('u_id'=>$u_id));
                 $this->success('修改成功','/admin.php/admin/account/index');
             }
@@ -48,14 +48,17 @@ class Account extends Common{
                 $data['state'] = 1;
                 $data['status'] = 1;
             }
-            return \view('show',array('u_id'=>0,'data'=>$data));
+            return \view('show',array('u_id'=>$u_id,'data'=>$data));
         }
     }
     public function power(){
 
         return view('power');
     }
-    public function test(){
-        return view('test');
+    public function delete(){
+        $u_id = Request::instance()->get('u_id',0);
+        $user_model = new User();
+        $user_model->delete_UserInfo(array('u_id'=>$u_id));
+        $this->success('删除成功','/admin.php/admin/account/index');
     }
 }

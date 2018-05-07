@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$title}</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="/public/admin/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/public/admin/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="/public/admin/css/amazeui.min.css" />
+    <link rel="stylesheet" href="/public/admin/css/admin.css">
+    <link rel="stylesheet" href="/public/admin/css/app.css">
+</head>
+
+<body data-type="generalComponents">
+
+
+    {include file="index/header"/}
+
+
+    <div class="tpl-page-container tpl-page-header-fixed">
+       {include file="index/menu"/}
+
+
+        <div class="tpl-content-wrapper">
+
+            <div class="tpl-portlet-components">
+                <div class="portlet-title">
+                    <div class="caption font-green bold">
+                        <span class="am-icon-code"></span> 上传实验
+                    </div>
+                    <div class="tpl-portlet-input tpl-fz-ml">
+                        <div class="portlet-input input-small input-inline">
+                            <div class="input-icon right">
+                                <i class="am-icon-search"></i>
+                                <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="tpl-block ">
+
+                    <div class="am-g tpl-amazeui-form">
+
+
+                        <div class="am-u-sm-12 am-u-md-9">
+                            <form class="am-form am-form-horizontal" method="post" action="/admin.php/admin/experiment/form_text">
+                                <input type="hidden" name="tip" value="1">
+                                <input type="hidden" name="e_id" value="{$e_id}">
+                                <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-3 am-form-label">实验名称</label>
+                                    <div class="am-u-sm-9">
+                                        <input type="text" required="required" value="{$data.title}" name="title" id="user-name" placeholder="输入实验名称">
+                                        <!--<small></small>-->
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="user-phone" class="am-u-sm-3 am-form-label">反应类型 </label>
+                                    <div class="am-u-sm-9">
+                                        <select name="status_react">
+                                            <option value="1">化合反应</option>
+                                            <option value="2">中和反应</option>
+                                            <option value="3">分解反应</option>
+                                            <option value="4">复分解反应</option>
+                                            <option value="5">氧化还原反应</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="user-phone" class="am-u-sm-3 am-form-label">归属级别 </label>
+                                    <div class="am-u-sm-9">
+                                        <select name="status_grade">
+                                            <option value="1">高中必修一</option>
+                                            <option value="2">高中必修二</option>
+                                            <option value="3">高中选修一</option>
+                                            <option value="4">高中选修二</option>
+                                            <option value="5">高中选修三</option>
+                                            <option value="6">高中选修四</option>
+                                            <option value="7">高中选修五</option>
+                                            <option value="8">高中选修六</option>
+                                            <option value="9">初中九年级上册</option>
+                                            <option value="10">初中九年级下册</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="user-intro" class="am-u-sm-3 am-form-label">实验简介</label>
+                                    <div class="am-u-sm-9">
+                                        <textarea class="" rows="2" required="required" value="" name="profile" id="user-intro" placeholder="实验简介...">{$data.profile}</textarea>
+                                        <!--<small></small>-->
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="user-intro" class="am-u-sm-3 am-form-label">实验器材</label>
+                                    <div class="am-u-sm-9">
+                                        <textarea class="" rows="2" required="required" value="" name="material" id="user-intro" placeholder="实验器材...">{$data.material}</textarea>
+                                        <!--<small></small>-->
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="user-intro" class="am-u-sm-3 am-form-label">实验重点</label>
+                                    <div class="am-u-sm-9">
+                                        <textarea class="" rows="3" required="required" value="" name="focus" id="user-intro" placeholder="实验重点...">{$data.focus}</textarea>
+                                        <!--<small></small>-->
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="user-intro" class="am-u-sm-3 am-form-label">实验内容</label>
+                                    <div class="am-u-sm-9">
+                                        <textarea class="" rows="5" required="required" value="" name="content" id="user-intro" placeholder="实验内容...">{$data.content}</textarea>
+                                        <!--<small></small>-->
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-3 am-form-label">上传者</label>
+                                    <div class="am-u-sm-9">
+                                        <input type="text" name="uploader" required="required" value="{$data.uploader}" id="user-name" placeholder="输入上传者">
+                                        <!--<small></small>-->
+                                    </div>
+                                </div>
+
+                                <div class="am-form-group">
+                                    <div class="am-u-sm-9 am-u-sm-push-3">
+                                        <button type="submit" class="am-btn am-btn-primary">下一步</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+    <script src="/public/admin/js/jquery.min.js"></script>
+    <script src="/public/admin/js/amazeui.min.js"></script>
+    <script src="/public/admin/js/app.js"></script>
+</body>
+
+</html>
