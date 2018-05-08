@@ -156,11 +156,12 @@
                 </div>
 
                 <script>
-                    function tanchu() {
+                    function tanchu(c_id) {
                         $('#my-prompt').modal({
                             relatedTarget: this,
                             onConfirm: function (e) {
-                                alert('你输入的是：' + e.data || '')
+                                alert('你输入的是：' + e.data + c_id|| '')
+//                                location.href = '/admin.php/admin/comment/add_comment';
                             }
                         });
                     }
@@ -178,18 +179,18 @@
                             用户：{$line.username} <span>
                             <span
                                   >
-                                在《{$line.e_title}》实验中评论：{$line.content}....
+                                在《{$line.e_title}》实验中评论：{$line.content}
                             </span>
                             <!--(点击可查看详细及回复)-->
-                            <?php if($line['state']==1){?>
-                            <span class="tpl-label-info" onclick="tanchu()"> 未回复(点击回复)
-                                                            <i class="am-icon-share"></i>
-                                </span>
-                            <?php }else{?>
-                            <span class="tpl-label-info" > 已回复
-                                                            <i class="am-icon-share"></i>
-                                </span>
-                            <?php }?>
+                            <!--<?php if($line['state']==1){?>-->
+                            <!--<span class="tpl-label-info" onclick="tanchu('')"> 未回复(点击回复)-->
+                                                            <!--<i class="am-icon-share"></i>-->
+                                <!--</span>-->
+                            <!--<?php }else{?>-->
+                            <!--<span class="tpl-label-info" > 已回复-->
+                                                            <!--<i class="am-icon-share"></i>-->
+                                <!--</span>-->
+                            <!--<?php }?>-->
                         </span>
                         </div>
                     </li>

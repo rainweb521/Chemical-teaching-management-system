@@ -37,6 +37,16 @@ class ExperimentM extends Model{
         $list = ExperimentM::where($where)->select();
         return $list;
     }
+    public function get_View($where=null){
+        $list = ExperimentM::where($where)->select();
+
+        $view = 0;
+        foreach ($list as $line){
+//            var_dump($line);exit();
+            $view = $view + $line['view'];
+        }
+        return $view;
+    }
     public function delete_ExperimentInfo($id){
         /** 因为懒得写了，所以这里只删除了数据库中的记录，并没有真正的删除视频和图片文件 */
         ExperimentM::where(array('e_id'=>$id))->delete();

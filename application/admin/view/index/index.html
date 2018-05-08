@@ -51,8 +51,8 @@
                     <h3>中学化学教学管理系统
                         <span class="close" data-close="note"></span>
                     </h3>
-                    <p> 教学管理系统含近 20 个 CSS 组件、20 余 JS 组件，更有多个包含不同主题的 Web 组件，可快速构建界面出色、体验优秀的跨屏页面，大幅提升开发效率。</p>
-                    <p><span class="label label-danger">提示:</span>中文排版，根据用户代理调整字体，实现更好的中文排版效果。
+                    <!--<p> 教学管理系统含近 20 个 CSS 组件、20 余 JS 组件，更有多个包含不同主题的 Web 组件，可快速构建界面出色、体验优秀的跨屏页面，大幅提升开发效率。</p>-->
+                    <!--<p><span class="label label-danger">提示:</span>中文排版，根据用户代理调整字体，实现更好的中文排版效果。-->
                     </p>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                             <i class="am-icon-comments-o"></i>
                         </div>
                         <div class="details">
-                            <div class="number"> 1349 </div>
+                            <div class="number"> {$data.view} </div>
                             <div class="desc"> 今日游览数 </div>
                         </div>
                         <a class="more" href="#"> 查看更多
@@ -78,8 +78,8 @@
                             <i class="am-icon-bar-chart-o"></i>
                         </div>
                         <div class="details">
-                            <div class="number"> 62% </div>
-                            <div class="desc"> 今日上传视频 </div>
+                            <div class="number"> {$data.ex_num} </div>
+                            <div class="desc"> 今日上传实验 </div>
                         </div>
                         <a class="more" href="#"> 查看更多
                     <i class="m-icon-swapright m-icon-white"></i>
@@ -92,7 +92,7 @@
                             <i class="am-icon-apple"></i>
                         </div>
                         <div class="details">
-                            <div class="number"> 653 </div>
+                            <div class="number"> {$data.user_num} </div>
                             <div class="desc"> 今日注册用户 </div>
                         </div>
                         <a class="more" href="#"> 查看更多
@@ -106,7 +106,7 @@
                             <i class="am-icon-android"></i>
                         </div>
                         <div class="details">
-                            <div class="number"> 786 </div>
+                            <div class="number"> {$data.comm_num} </div>
                             <div class="desc"> 今日留言 </div>
                         </div>
                         <a class="more" href="#"> 查看更多
@@ -132,81 +132,34 @@
 
                         <div class="am-tabs tpl-index-tabs" data-am-tabs>
                             <ul class="am-tabs-nav am-nav am-nav-tabs">
-                                <li class="am-active"><a href="#tab1">已回复</a></li>
-                                <li><a href="#tab2">未回复</a></li>
+                                <!--<li class="am-active"><a href="#tab1">已回复</a></li>-->
+                                <!--<li><a href="#tab2">未回复</a></li>-->
                             </ul>
 
                             <div class="am-tabs-bd">
                                 <div class="am-tab-panel am-fade am-in am-active" id="tab1">
                                     <div id="wrapperA" class="wrapper">
-                                        <div id="scroller" class="scroller">
-                                            <ul class="tpl-task-list tpl-task-remind">
-                                                <li>
-                                                    <div class="cosB">
-                                                        36分钟前
-                                                    </div>
-                                                    <div class="cosA">
-                                                        <span class="cosIco label-danger">
-                        <i class="am-icon-bolt"></i>
-                      </span>
+                                        <div class="tpl-scrollable">
 
-                                                        <span> FontAwesome 在不一致问题（v2.3 新增）。</span>
-                                                    </div>
+                                            <table class="am-table tpl-table">
 
-                                                </li>
+                                                <tbody>
+                                                {volist name="comment" id="line"}
+                                                <tr>
+                                                    <td>
+                                                        <a class="user-name" href="###">{$line.username}</a>
+                                                    </td>
+                                                    <td>{$line.content}</td>
+                                                    <td>{$line.add_time}</td>
+                                                </tr>
+                                                {/volist}
 
-                                                <li>
-                                                    <div class="cosB">
-                                                        2小时前
-                                                    </div>
-                                                    <div class="cosA">
-                                                        <span class="cosIco label-info">
-                        <i class="am-icon-bullhorn"></i>
-                      </span>
-
-                                                        <span> 使用 flexbox 实现，只兼容 IE 10+ 及其他现代浏览器。</span>
-                                                    </div>
-
-                                                </li>
-                                            </ul>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="am-tab-panel am-fade" id="tab2">
-                                    <div id="wrapperB" class="wrapper">
-                                        <div id="scroller" class="scroller">
-                                            <ul class="tpl-task-list tpl-task-remind">
-                                                <li>
-                                                    <div class="cosB">
-                                                        36分钟前
-                                                    </div>
-                                                    <div class="cosA">
-                                                        <span class="cosIco label-danger">
-                        <i class="am-icon-bolt"></i>
-                      </span>
 
-                                                        <span> FontAwe解决宽度不一致问题（v2.3 新增）。</span>
-                                                    </div>
-
-                                                </li>
-
-                                                <li>
-                                                    <div class="cosB">
-                                                        2小时前
-                                                    </div>
-                                                    <div class="cosA">
-                                                        <span class="cosIco label-info">
-                        <i class="am-icon-bullhorn"></i>
-                      </span>
-
-                                                        <span> 使用 flexbox 实IE 10+ 及其他现代浏览器。</span>
-                                                    </div>
-
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
 
                             </div>
                         </div>
@@ -218,8 +171,8 @@
                     <div class="tpl-portlet">
                         <div class="tpl-portlet-title">
                             <div class="tpl-caption font-red ">
-                                <i class="am-icon-bar-chart"></i>
-                                <span>新注册用户</span>
+                                <!--<i class="am-icon-bar-chart"></i>-->
+                                <span>登录用户</span>
                             </div>
                         </div>
                         <div class="tpl-scrollable">
@@ -227,32 +180,22 @@
                             <table class="am-table tpl-table">
                                 <thead>
                                     <tr class="tpl-table-uppercase">
-                                        <th>人员</th>
-                                        <th>余额</th>
-                                        <th>次数</th>
-                                        <th>效率</th>
+                                        <th>用户名</th>
+                                        <th>邮箱</th>
+                                        <th>时间</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                {volist name="user" id="line"}
                                     <tr>
                                         <td>
-                                            <img src="/public/admin/img/user01.png" alt="" class="user-pic">
-                                            <a class="user-name" href="###">禁言小张</a>
+                                            <img src="{$line.photo}" alt="" class="user-pic">
+                                            <a class="user-name" href="###">{$line.username}</a>
                                         </td>
-                                        <td>￥3213</td>
-                                        <td>65</td>
-                                        <td class="font-green bold">26%</td>
+                                        <td>{$line.email}</td>
+                                        <td>{$line.last_time}</td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="/public/admin/img/user02.png" alt="" class="user-pic">
-                                            <a class="user-name" href="###">Alex.</a>
-                                        </td>
-                                        <td>￥2635</td>
-                                        <td>52</td>
-                                        <td class="font-green bold">32%</td>
-                                    </tr>
-
+                                {/volist}
 
                                 </tbody>
                             </table>

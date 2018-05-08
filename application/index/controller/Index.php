@@ -69,6 +69,9 @@ class Index extends Common {
         if ($e_id==0){$e_id=1;}
         $experiment_model = new ExperimentM();
         $data = $experiment_model->get_ExperimentInfo(array('e_id'=>$e_id));
+        /** 修改游览次数 */
+        $data['view'] = $data['view'] + 1;
+        $experiment_model->save_ExperimentInfo($data,['e_id'=>$e_id]);
         /** 加载 最新视频 */
         $new_data = $experiment_model->get_Experiment_New_List(6);
         /** 加载 评论 */
@@ -104,7 +107,7 @@ class Index extends Common {
                 $data['photo'] = $User['photo'];
                 $data['e_id'] = Request::instance()->post('e_id',1);
                 $data['e_title'] = Request::instance()->post('e_title','');
-                $data['add_time'] = date('Y-m-d h:i:m');
+                $data['add_time'] = date('Y-m-d');
                 $data['state'] = 1; /** 评论是否被系统回复 */
                 $data['status'] = 1; /** 评论是否可以显示 */
                 $data['node'] = 0;
